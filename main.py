@@ -1,4 +1,8 @@
 
+from menu import display_menu
+from monitoring import start_monitoring, list_active_monitoring, start_monitoring, start_monitoring_mode
+from alarms import create_alarm, view_alarms
+
 def main():
     while True:
         choice = display_menu()
@@ -7,7 +11,7 @@ def main():
         elif choice == 2:
             list_active_monitoring()
         elif choice == 3:
-            create_alarm()
+            create_alarm()                  
         elif choice == 4:
             view_alarms()
         elif choice == 5:
