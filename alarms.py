@@ -1,20 +1,16 @@
 
 
+def create_submenu():
+    print("\n=== Skapa larm ===")
+    print("1. CPU-användning")
+    print("2. Minnesanvändning")
+    print("3. Diskanvändning")
+    print("4. Tillbaka till huvudmeny")
+    try:
+        return int(input("Välj ett alternativ: "))
+    except ValueError:
+        print("Ogiltig inmatning, ange en siffra.")
+        return -1
+    
 
-def create_alarm():
-    # Skapa alarm
-    pass
-       
 
-def view_alarms():
-    # Se alarmen
-    pass
-
-
-def set_alarm():
-    # Här kommer kod för att ställa in larm
-    pass
-
-def list_alarms():
-    # Här koden för att lista alla konfigurerade larm
-    pass
