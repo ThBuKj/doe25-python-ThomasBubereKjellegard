@@ -1,0 +1,8 @@
+
+Testar om det går att lägga upp en "dagbok" i git genom att göra en textfil i VS. 
+
+10/9:   Se commit-kommentarerna
+
+        Har skissat på en mall för hur jag ska göra OOP för övervakningsfilen, får en klarare bild på hur jag ska lägga upp
+        det än för alarm (som CJ rekommenderade). Har även skissat på två funktioner för alarmfilen, har nog ganska bra koll
+        på hur jag ska göra dom, så bör lägga mer tid på övervakningsfilen (dvs lära mig OOP).
