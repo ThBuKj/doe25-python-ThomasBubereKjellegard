@@ -6,3 +6,23 @@ Testar om det går att lägga upp en "dagbok" i git genom att göra en textfil i
         Har skissat på en mall för hur jag ska göra OOP för övervakningsfilen, får en klarare bild på hur jag ska lägga upp
         det än för alarm (som CJ rekommenderade). Har även skissat på två funktioner för alarmfilen, har nog ganska bra koll
         på hur jag ska göra dom, så bör lägga mer tid på övervakningsfilen (dvs lära mig OOP).
+
+
+11/9:   Ändrade om i meny.py. 
+
+        Gjorde om felhanteringen lite, tar nu även bokstäver och tecken istället för bara siffror
+        och satte en whlite-loop så att menyn. Tog även bort "from threading import Event", trodde först att jag kunde använda
+        mig utav den på någotsätt. Men när jag läste på mer så var det inte riktigt vad jag letade efter.
+
+
+
+        Provade att lägga till en bit kod direkt i GitHub och gjorde en pull request. 
+
+        Gjorde även monotoring (övervakningsfilen) som en ny branch.
+
+        Tror jag har ganska bra koll på resten av alarmfilen, ska bara få ner det i kod.
+
+        Måste även bli bättre på att skriva ner kommentarer för koden jag skriver.
+
+
+from threading import Event

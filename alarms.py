@@ -13,20 +13,3 @@ def create_submenu():
         return -1
     
 
-def create_alarm():
-    while True:                                     
-        choice = create_submenu()                   
-        if choice == 1:
-            configure_alarm("CPU-användning")
-            break                                   
-        elif choice == 2:
-            configure_alarm("Minnesanvändning")
-            break
-        elif choice == 3:
-            configure_alarm("Diskanvändning")
-            break
-        elif choice == 4:
-            print("Återgår till huvudmenyn...")
-            break
-        else:
-            print("Ogiltigt val, försök igen.")
