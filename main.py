@@ -1,29 +1,31 @@
-
-
-from menu import display_menu
-from monitoring import start_monitoring, list_active_monitoring, start_monitoring_mode
+from menu import get_menu_choice 
+from monitoring import start_monitoring, show_current_status, start_monitoring_mode
 from alarms import create_alarm, view_alarms
 
 
-
 def main():
-    while True:
-        choice = display_menu()
-        if choice == 1:
-            start_monitoring()
-        elif choice == 2:
-            list_active_monitoring()
-        elif choice == 3:
-            create_alarm()                         
-        elif choice == 4:  
-            view_alarms()
-        elif choice == 5:
-            start_monitoring_mode()
-        elif choice == 0:
-            print("Programmet avslutas.")
-            break
-        else:
-            print("Ogiltigt val, försök igen.")
+    try:
+        while True:
+            choice = get_menu_choice
+            if choice == 1:
+                start_monitoring()
+            elif choice == 2:
+                show_current_status()
+            elif choice == 3:
+                create_alarm()
+            elif choice == 4:
+                view_alarms()
+            elif choice == 5:
+                start_monitoring_mode()
+            elif choice == 0:
+                print("Programmet avslutas.")
+                break
+            else:
+                print("Ogiltigt val, försök igen.")
+    except KeyboardInterrupt:
+        print("\nProgrammet avbröts av användaren med Ctrl+C.")
+        print("Avslutar snyggt...")
+
 
 if __name__ == "__main__":
     main()

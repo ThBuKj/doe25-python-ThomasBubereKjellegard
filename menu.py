@@ -1,35 +1,28 @@
 
 def display_menu():
+    print("\n============================")
+    print("    SYSTEMÖVERVAKNING     ")
+    print("============================")
+    print("1. Starta övervakning i bakgrunden")
+    print("2. Visa aktuell systemstatus")
+    print("3. Skapa/ändra larm")
+    print("4. Visa aktiva larm")
+    print("5. Starta live-övervakning")
+    print("0. Avsluta")
+    print("============================\n")
+
+def get_menu_choice():
     while True:
-        print("\n============================")
-        print("     SYSTEMÖVERVAKNING      ")
-        print("============================")
-        print("1. Starta övervakning")
-        print("2. Lista aktiv övervakning")
-        print("3. Skapa larm")
-        print("4. Visa larm")
-        print("5. Starta övervakningsläge")
-        print("0. Avsluta")
-        print("============================\n")
+        display_menu()
+        choice_str = input("Välj ett alternativ (0-5): ").strip()
         
-
-        choice = input("Välj ett alternativ (0–5): ").strip()
-        print()
+        try:
+            choice = int(choice_str)
+            if 0 <= choice <= 5:
+                return choice
+            else:
+                print("\n*** Ogiltigt val. Välj ett nummer mellan 0 och 5. ***")
+        except ValueError:
+            print("\n*** Ogiltig inmatning. Ange endast en siffra. ***")
         
-        if not choice:
-            print("Du måste ange ett val (0–5). Försök igen.")
-            continue
-
-        if not choice.isdigit():
-            print("Ogiltig inmatning. Ange endast siffror (0–5).")
-            continue
-
-        choice = int(choice)
-
-        if choice not in range(0, 6):
-            print("Ogiltigt val. Välj mellan 0 och 5.")
-            continue
-
-        return choice
-
-
+        input("Tryck Enter för att försöka igen...")

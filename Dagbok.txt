@@ -1,20 +1,19 @@
-
 Testar om det går att lägga upp en "dagbok" i git genom att göra en textfil i VS. 
 
-10/9:   Se commit-kommentarerna
+
+
+9/9:   Se commit-kommentarerna
 
         Har skissat på en mall för hur jag ska göra OOP för övervakningsfilen, får en klarare bild på hur jag ska lägga upp
         det än för alarm (som CJ rekommenderade). Har även skissat på två funktioner för alarmfilen, har nog ganska bra koll
         på hur jag ska göra dom, så bör lägga mer tid på övervakningsfilen (dvs lära mig OOP).
 
 
-11/9:   Ändrade om i meny.py. 
+10/9:   Ändrade om i meny.py. 
 
         Gjorde om felhanteringen lite, tar nu även bokstäver och tecken istället för bara siffror
         och satte en whlite-loop så att menyn. Tog även bort "from threading import Event", trodde först att jag kunde använda
         mig utav den på någotsätt. Men när jag läste på mer så var det inte riktigt vad jag letade efter.
-
-
 
         Provade att lägga till en bit kod direkt i GitHub och gjorde en pull request. 
 
@@ -25,4 +24,22 @@ Testar om det går att lägga upp en "dagbok" i git genom att göra en textfil i
         Måste även bli bättre på att skriva ner kommentarer för koden jag skriver.
 
 
-from threading import Event
+12/9    Alarmfilen är snart klar, ska bara fixa "view_alarms" och att den varnar ifall något larm säger ifrån, men kanske blir i
+        monotoring istället? Fixade även till en sak i menu-filen, gjorde valideringen till try:expect istället, bytte även namn
+        på funktionen så att den blev mer beskrivande. 
+
+        Har också läst på om psutil och verkar inte så svårt att få till, threads däremot verkar lite bökigare(?).
+
+        Lekte runt med olika extencions i fredags för att få koden snyggare på ett enkelt sätt, har tidigare gjort det genom ChatGPT.
+        Så fick lära mig den hårda vägen.. Förstod inte exakt vad dom gjorde, men nu vet jag.. Så väljer för stunden att endast
+        använda mig utan "Black formatter" och att den endast fungerar på komandon.
+
+        Råkade även klistra in hela main i menu, utan att märka det och satt och felsökte i säkert fem minuter. Sparade filerna
+        och startade om VS för att se ifall det var något fel med minnet eller dyl. Fick det inte att fungera, sen såg jag att
+        jag kopierat in hela main i menu. Fick lite lätt panik då ctrl z inte fungerade, men kom på att allt som fungerat tidigare
+        finns uppe på GitHub :). Höll på med att fixa så att programmet avslutades snyggt utan felmeddelanden.
+
+13/9    Suttit med min far som försökt förklara "threads". På sättet jag hade lagt in den som en "bakgrundstråd", den fanns där
+        men gjorde inget aktivt utan vaknade till liv vid behov. Han sa att jag ska tänka på att ge den en viktigare roll, att den     
+        ska jobba helatiden i bakgrunden oberoende av vad jag gör i menyn. Så vad jag än gör i programmet, hämtar den data och kan
+        varna vid behov. Det gjordes genom att köra den som en while loop: "while self.monitoring_active:". 
