@@ -39,7 +39,31 @@ Testar om det går att lägga upp en "dagbok" i git genom att göra en textfil i
         jag kopierat in hela main i menu. Fick lite lätt panik då ctrl z inte fungerade, men kom på att allt som fungerat tidigare
         finns uppe på GitHub :). Höll på med att fixa så att programmet avslutades snyggt utan felmeddelanden.
 
-13/9    Suttit med min far som försökt förklara "threads". På sättet jag hade lagt in den som en "bakgrundstråd", den fanns där
+        Suttit med min far som försökt förklara "threads". På sättet jag hade lagt in den som en "bakgrundstråd", den fanns där
         men gjorde inget aktivt utan vaknade till liv vid behov. Han sa att jag ska tänka på att ge den en viktigare roll, att den     
         ska jobba helatiden i bakgrunden oberoende av vad jag gör i menyn. Så vad jag än gör i programmet, hämtar den data och kan
         varna vid behov. Det gjordes genom att köra den som en while loop: "while self.monitoring_active:". 
+
+        Delade upp menu.py i två olika funktioner istället.
+
+
+13/9    Ska bli bättre på att skriva ner vilka problem jag haft under projektets gång till rapporten.
+        - Alla typer av menyer gick fort att göra 
+        - MÅSTE skriva kommentarer
+        - Skriva ner alla funktioner i rapporten och förklara dom.
+        - 
+######### 
+######### Notering till mig själv; göra om create_alarm(): till en lista. Såg att jag missat det.
+######### 
+
+14/9    Självstuder om OOP
+15/9    
+
+16/9    Jobbat på monitoring.py - Blev nästan klar med koden. 
+17/9    Jobbat på monitoring.py - Blev klar med monitoring.py. Insåg att jag inte använde mig utav den i main.py
+        så fixade det också (jävla skitspel). Ska även göra om alarm.py till OOP, tror inte det blir så mycket extra jobb.
+
+        Har kikat lite på presentationen, och ska göra ett flödesschema i mermaid som jag även kan lägga upp på github. 
+        Det är tydligen vanligt som "devops".
+
+18/8

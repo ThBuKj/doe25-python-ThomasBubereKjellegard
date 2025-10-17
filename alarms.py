@@ -35,7 +35,7 @@ def create_alarm():
 def configure_alarm(alarm_type):
     while True:
         try:
-            level = int(input(f"\nStäll in nivå för {alarm_type} (1–100): "))
+            level = int(input(f"\nStäll in nivå för {alarm_type} (1-100): "))
             if 1 <= level <= 100:
                 print(f"Larm för {alarm_type} satt till {level}%.")
                 break
