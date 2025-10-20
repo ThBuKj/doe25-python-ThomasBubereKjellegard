@@ -1,12 +1,10 @@
-
-
 def display_menu():
     print("\n============================")
     print("    SYSTEMÖVERVAKNING     ")
     print("============================")
-    print("1. Starta övervakning i bakgrunden")
+    print("1. Starta övervakning")
     print("2. Visa aktuell systemstatus")
-    print("3. Skapa/ändra larm")
+    print("3. Skapa larm")
     print("4. Visa aktiva larm")
     print("5. Starta live-övervakning")
     print("0. Avsluta")

@@ -1,34 +1,41 @@
-from menu import get_menu_choice 
-from monitoring import start_monitoring, show_current_status, start_monitoring_mode, SystemMonitor
-from alarms import create_alarm, view_alarms
+# Importen för configparser är borttagen
+from menu import get_menu_choice
+from monitoring import SystemMonitor, start_monitoring_mode
+from alarms import create_alarm, view_alarms, alarms_list
+
 
 
 def main():
     monitor = SystemMonitor()  
-    alarms_list = []
 
     try:
         while True:
-            choice = get_menu_choice()          
+            choice = get_menu_choice()
             if choice == 1:
-                start_monitoring(monitor, alarms_list)
+                monitor.start(alarms_list)
             elif choice == 2:
-                show_current_status(monitor)
+                if not monitor.monitoring_active:
+                    print("\nIngen övervakning är aktiv. Starta den med alternativ 1.")
+                else:
+                    monitor.print_status()
+                input("\nTryck Enter för att återgå till menyn.")
             elif choice == 3:
                 create_alarm()
             elif choice == 4:
                 view_alarms()
             elif choice == 5:
-                start_monitoring_mode(monitor)
+                if not monitor.monitoring_active:
+                    print("\nDu måste starta övervakningen först (alternativ 1).")
+                    input("Tryck Enter för att fortsätta...")
+                else:
+                    start_monitoring_mode(monitor)
             elif choice == 0:
                 print("Programmet avslutas.")
                 break
             else:
                 print("Ogiltigt val, försök igen.")
     except KeyboardInterrupt:
-        print("\nProgrammet avbröts av användaren med Ctrl+C.")
-        print("Avslutar snyggt...")
-
+        print("\nProgrammet avbröts av användaren.")
 
 if __name__ == "__main__":
     main()

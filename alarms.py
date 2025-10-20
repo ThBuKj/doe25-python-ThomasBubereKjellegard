@@ -1,77 +1,69 @@
+class Alarm:
+    def __init__(self, metric_type, threshold):
+        self.metric_type = metric_type
+        self.threshold = threshold
 
+    def __str__(self):
+        return f"{self.metric_type} larm {self.threshold}%"
 
-def create_submenu():
-    print("\n=== Skapa larm ===")
-    print("1. CPU-användning")
-    print("2. Minnesanvändning")
-    print("3. Diskanvändning")
-    print("4. Tillbaka till huvudmeny")
-    try:
-        return int(input("Välj ett alternativ: "))
-    except ValueError:
-        print("Ogiltig inmatning, ange en siffra.")
-        return -1
-
+alarms_list = []
 
 def create_alarm():
+    metric_map = {
+        1: "CPU",
+        2: "Minne",
+        3: "Disk"
+    }
     while True:
-        choice = create_submenu()
-        if choice == 1:
-            configure_alarm("CPU-användning")
-            break
-        elif choice == 2:
-            configure_alarm("Minnesanvändning")
-            break
-        elif choice == 3:
-            configure_alarm("Diskanvändning")
-            break
-        elif choice == 4:
-            print("Återgår till huvudmenyn...")
-            break
-        else:
-            print("Ogiltigt val, försök igen.")
+        print("\n=== Konfigurera larm ===")
+        print("1. CPU användning")
+        print("2. Minnesanvändning")
+        print("3. Diskanvändning")
+        print("0. Tillbaka till huvudmeny")
+        
+        try:
+            choice_str = input("Välj typ av larm att skapa (0-3): ").strip()
+            choice = int(choice_str)
 
+            if choice == 0:
+                break
+            
+            if choice in metric_map:
+                metric_type = metric_map[choice]
+                threshold = _get_threshold_from_user(metric_type)
+                if threshold:
+                    new_alarm = Alarm(metric_type, threshold)
+                    alarms_list.append(new_alarm)
+                    print(f"\n*** Larm skapat: {new_alarm} ***")
+                    input("Tryck Enter för att fortsätta...")
+                    break
+            else:
+                print("\n*** Ogiltigt val. Välj ett nummer mellan 0 och 3. ***")
+        except ValueError:
+            print("\n*** Ogiltig inmatning. Ange endast en siffra. ***")
 
-def configure_alarm(alarm_type):
+def _get_threshold_from_user(metric_type):
     while True:
         try:
-            level = int(input(f"\nStäll in nivå för {alarm_type} (1-100): "))
+            level_str = input(f"Ställ in nivå för {metric_type}-larm (1-100): ").strip()
+            level = int(level_str)
             if 1 <= level <= 100:
-                print(f"Larm för {alarm_type} satt till {level}%.")
-                break
+                return level
             else:
-                print("Värdet måste vara mellan 1 och 100.")
+                print("\n*** Värdet måste vara mellan 1 och 100. ***")
         except ValueError:
-            print("Ogiltig inmatning, skriv ett heltal mellan 1 och 100.")
+            print("\n*** Ogiltig inmatning, skriv ett heltal. ***")
 
-
-"""""" """''
-Visa larm
-Listar alla configurerade larm. Larmen ska vara sorterade på typ när de visas. Exempel:
-
-CPU larm 70%
-Disklarm 95%
-Minneslarm 80%
-Minneslarm 90%
-Efter detta promtas användaren om att bekräfta genom att trycka enter.
-
-Tryck valfri tangent för att gå tillbaka till huvudmeny
-
-Notera att man kan ha flera larm av samma typ.
-
-
-
- Triggas ett larm när övervakningen är aktiv skrivs det ut i konsolen. T.ex:
-
-                ***VARNING, LARM AKTIVERAT, CPU ANVÄNDNING ÖVERSTIGER 80%***
-
-                
-""" """"""
-
+def get_sort_key(alarm):
+    return alarm.metric_type
 
 def view_alarms():
-    pass
-
-
-def view_alarms():
-    pass
+    if not alarms_list:
+        print("\nInga larm är konfigurerade.")
+    else:
+        print("\n=== Konfigurerade Larm ===")
+        sorted_alarms = sorted(alarms_list, key=get_sort_key)
+        for alarm in sorted_alarms:
+            print(alarm)
+    
+    input("\nTryck Enter för att återgå till huvudmenyn.")

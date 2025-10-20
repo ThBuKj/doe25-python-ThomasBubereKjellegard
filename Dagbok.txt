@@ -66,4 +66,22 @@ Testar om det går att lägga upp en "dagbok" i git genom att göra en textfil i
         Har kikat lite på presentationen, och ska göra ett flödesschema i mermaid som jag även kan lägga upp på github. 
         Det är tydligen vanligt som "devops".
 
-18/8
+18/8    
+        Kikade på att lägga till fler alternativ i menyn, såg då exempel på att använda listor istället för if/else-sats.
+        Gjort om Readme.txt
+        Gjorde om logiken för menyn alarm.py
+
+19/10   Har lekt runt lite med en config.ini fil. 
+
+20/10   Klar med all kod nu. Kommer att commita den fungerande koden. Visade koden för min far som gav mig lite småsaker att fixa. 
+        Tex kan den globala listan i alarms.py alarms_list = [] skapa problem, man ska "centralisera datan" så ska få bort den listan 
+        och använda mig utan mina objekt istället. Finns rader här och där, som han påpekade på att han hade gjort annorlunda, så ska 
+        pilla lite med det.
+
+        Fick inte riktigt config.ini filen att fungera, så skippade det för studen.
+
+        Vet inte om jag är så jättesugen på att göra om logiken för menyerna för att kunna lägga till fler val enkelt, ska kika lite på
+        det så att jag vet om att det alternativet finns till framtida projekt. Just nu vill jag nog försöka få det att bli lite mer 
+        "devops". Loggning, larm till mail/slack eller GUI låter roligare. Eller prova att lägga upp en GitHub Actions-pipline? 
+
+        
