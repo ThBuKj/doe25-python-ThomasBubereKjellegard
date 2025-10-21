@@ -1,7 +1,7 @@
 # Importen för configparser är borttagen
 from menu import get_menu_choice
-from monitoring import SystemMonitor, start_monitoring_mode
-from alarms import create_alarm, view_alarms, alarms_list
+from monitoring import SystemMonitor
+
 
 
 
@@ -12,7 +12,7 @@ def main():
         while True:
             choice = get_menu_choice()
             if choice == 1:
-                monitor.start(alarms_list)
+                monitor.start()
             elif choice == 2:
                 if not monitor.monitoring_active:
                     print("\nIngen övervakning är aktiv. Starta den med alternativ 1.")
@@ -20,15 +20,15 @@ def main():
                     monitor.print_status()
                 input("\nTryck Enter för att återgå till menyn.")
             elif choice == 3:
-                create_alarm()
+                monitor.create_alarm()
             elif choice == 4:
-                view_alarms()
+                monitor.view_alarms()
             elif choice == 5:
                 if not monitor.monitoring_active:
                     print("\nDu måste starta övervakningen först (alternativ 1).")
                     input("Tryck Enter för att fortsätta...")
                 else:
-                    start_monitoring_mode(monitor)
+                    monitor.start_monitoring_mode()
             elif choice == 0:
                 print("Programmet avslutas.")
                 break

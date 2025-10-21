@@ -84,4 +84,15 @@ Testar om det går att lägga upp en "dagbok" i git genom att göra en textfil i
         det så att jag vet om att det alternativet finns till framtida projekt. Just nu vill jag nog försöka få det att bli lite mer 
         "devops". Loggning, larm till mail/slack eller GUI låter roligare. Eller prova att lägga upp en GitHub Actions-pipline? 
 
-        
+
+21/10   Stuvade om en del i koden för att få den "mer fokuserad";
+
+        Tog bort den globala listan alarms_list.
+        Flyttade ansvaret för att hantera larm till SystemMonitor-klassen.
+        Flyttade funktionerna create_alarm och view_alarms in till SystemMonitor-klassen och gjorde dem till metoder.
+
+        Dvs jag samlade allt som har med övervakning och larm i monotoring.py. 
+
+        alarms.py blev ju väldigt naken, men vill nog påstå att detta är enklare att hålla koll på ändå.
+
+        Får inte glömma att tacka Pylance när man flyttar kod.. Även tacka black!
