@@ -1,4 +1,3 @@
-# Importen för configparser är borttagen
 from menu import get_menu_choice
 from monitoring import SystemMonitor
 
